@@ -1,0 +1,16 @@
+DECLARE
+    l_date DATE;
+    l_interval NUMBER;
+    l_horW VARCHAR2(10);
+    l_error_message VARCHAR2(100);
+    l_bool BOOLEAN;
+BEGIN
+    l_date := TO_DATE('2001-NOV-11', 'YYYY-MON-DD');
+    l_interval := -5;
+    l_bool := izabora_isholiday(l_date, l_interval, l_horW, l_error_message);
+    IF l_bool = TRUE THEN
+        DBMS_OUTPUT.PUT_LINE('IT IS A HOLIDAY!');
+        DBMS_OUTPUT.PUT_LINE(l_horW);
+    END IF;
+    DBMS_OUTPUT.PUT_LINE(l_error_message);
+END;
