@@ -1,0 +1,14 @@
+DECLARE
+    l_ccy_from  VARCHAR2(3);
+    l_ccy_to  VARCHAR2(3);
+    l_branch    VARCHAR2(3);
+    l_amount    NUMBER(22,3);
+    l_result    NUMBER(22,3);
+BEGIN    
+    l_ccy_from := 'GBP';
+    l_ccy_to   := 'USD';
+    l_branch   := '000';
+    l_amount   := 100;
+    l_result := fn_Izabora_exchange_FCUST(l_ccy_from, l_ccy_to, l_amount, l_branch);
+    DBMS_OUTPUT.PUT_LINE(l_result);
+END;

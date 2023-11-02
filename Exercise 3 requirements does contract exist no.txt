@@ -1,0 +1,12 @@
+DECLARE
+    l_udf_name    cstm_contract_userdef_fields.contract_ref_no%TYPE;
+    l_udf_value   cstm_contract_userdef_fields.field_val_1%TYPE;
+    l_fc_module   cstm_contract_userdef_fields.module%TYPE;
+    l_result      VARCHAR2(1);
+BEGIN
+    l_udf_name := 'CL_EXT_ACCOUNT_NO';
+    l_udf_value := '000HPDD202765007';
+    l_fc_module := 'SI';
+    l_result := fn_Izabora_does_contract_exist_no_FCUST(l_udf_name, l_udf_value, l_fc_module);
+    DBMS_OUTPUT.PUT_LINE(l_result);
+END;

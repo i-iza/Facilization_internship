@@ -1,0 +1,21 @@
+CREATE TABLE IZABORA_xml_table (
+  id_table        NUMBER(10),
+  filename        VARCHAR2(100),
+  xml_data        XMLTYPE
+);
+
+CREATE TABLE IZABORA_ex1 (
+  EndToEndId      VARCHAR2(20),
+  Amt             NUMBER,
+  Ccy             VARCHAR2(3),
+  IBAN            VARCHAR2(34),
+  BIC             VARCHAR2(11)
+);
+
+ALTER TABLE IZABORA_xml_table ADD (
+  CONSTRAINT xml_table_pk PRIMARY KEY (id_table)
+);
+
+CREATE SEQUENCE IZABORA_xml_tab_seq;
+
+EXEC fn_Izabora_load_xml_FCUST(p_dir => 'IZABORA_DIR', p_filename => 'ex1.xml');
