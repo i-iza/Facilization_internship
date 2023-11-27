@@ -1,0 +1,22 @@
+CREATE TABLE STTM_BORA4_MASTER(
+    refer               VARCHAR2(20),
+    descript            VARCHAR2(50),
+    customer_number     VARCHAR2(20),
+    customer_name       VARCHAR2(50),
+    phone_number        VARCHAR2(20),
+    email               VARCHAR2(50),
+    account             VARCHAR2(50),
+    priority            VARCHAR(10),
+    ammount             NUMBER,
+    ccy                 VARCHAR2(3),
+    current_date        DATE,
+    AUTH_STAT           CHAR(1),
+    RECORD_STAT         CHAR(1),
+    MOD_NO              NUMBER,
+    CHECKER_ID          VARCHAR2(12),
+    ONCE_AUTH           VARCHAR2(1),
+    MAKER_ID            VARCHAR2(12),
+    MAKER_DT_STAMP      TIMESTAMP (6),
+    CHECKER_DT_STAMP    TIMESTAMP (6),
+    CONSTRAINT PK_STTM_BORA4_MASTER PRIMARY KEY (refer)
+); 
