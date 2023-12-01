@@ -1,7 +1,0 @@
-com\XMLData\XML\controller\XmlUploadController.class
-com\XMLData\XML\utility\XmlParser.class
-com\XMLData\XML\repository\ClientRepository.class
-com\XMLData\XML\model\Clients.class
-com\XMLData\XML\XmlApplication.class
-com\XMLData\XML\model\Client.class
-com\XMLData\XML\service\XmlUploadService.class
