@@ -1,0 +1,94 @@
+<!--
+ Copyright (c) 2014, 2023, Oracle and/or its affiliates.
+ Licensed under The Universal Permissive License (UPL), Version 1.0
+ as shown at https://oss.oracle.com/licenses/upl/
+ -->
+ <div style="display: flex; justify-content: space-between; align-items: flex-start; height: 70vh; padding: 0 20px; margin-top: 50px;">
+  <div style="flex: 1; margin-right: 20px;">
+  <oj-form-layout
+    id="formLayoutOptions"
+    max-columns="1"
+    direction="row">
+
+    <oj-input-text
+      :id=[[inputNameID]]
+      value="{{inputNameValue}}"
+      length.max="35"
+      length.count-by="codeUnit"
+      :label-hint=[[inputNameLbl]]
+      help.instruction="Maximum of 35 characters"
+      display-options.validator-hint="none">
+    </oj-input-text>
+
+    <oj-input-text
+      :id=[[inputSurnameID]]
+      value="{{inputSurnameValue}}"
+      length.max="35"
+      length.count-by="codeUnit"
+      :label-hint=[[inputSurnameLbl]]
+      help.instruction="Maximum of 35 characters"
+      display-options.validator-hint="none">
+    </oj-input-text>
+
+    <oj-input-date 
+      :id = [[inputBirthdayID]]
+      value="{{inputBirthdayValue}}"
+      min="[[min]]"
+      max="[[max]]"
+      on-value-changed="[[onInputBirthdayValueChanged]]"
+      :label-hint=[[inputBirthdayLbl]] 
+      autocomplete="off">
+    </oj-input-date>
+
+    <oj-select-single
+      :id=[[inputGenderID]]
+      value="{{inputGenderValue}}"
+      :label-hint=[[inputGenderLbl]]
+      data="[[genderList]]">
+    </oj-select-single>
+
+    <oj-input-text
+      :id=[[inputBirthplaceID]]
+      value="{{inputBirthplaceValue}}"
+      :label-hint=[[inputBirthplaceLbl]]>
+    </oj-input-text>
+
+    <oj-input-number
+      :id=[[inputAgeID]]
+      disabled
+      :value="{{inputAgeValue}}"
+      :label-hint=[[inputAgeLbl]]>
+    </oj-input-number>
+
+    <div class="demo-row-classes demo-flex-display oj-sm-margin-5x-bottom">
+      <div class="oj-flex oj-sm-flex-items-initial oj-sm-justify-content-center">
+        <oj-button 
+          on-oj-action="[[onSaveButtonClick]]">
+          <span>
+            <oj-bind-text value = '[[saveButtonLbl]]'>
+            </oj-bind-text>
+          </span>
+        </oj-button>
+      </div>
+      </div>
+  </oj-form-layout>
+</div>
+
+  <div id="tableContainer" style="flex: 1;">
+    <oj-table
+     id="table"
+     aria-label="Departments Table"
+     class="demo-table-container oj-helper-text-align-center"
+     data="[[dataprovider]]"
+     horizontal-grid-visible="enabled"
+     columns='[{"headerText": "Name", "field": "name", "id": "name"},
+              {"headerText": "Surname", "field": "surname", "id": "surname"},
+              {"headerText": "Birthday", "field": "birthday", "id": "birthday"},
+              {"headerText": "Gender", "field": "gender", "id": "gender"},
+              {"headerText": "Birthplace", "field": "birthplace", "id": "birthplace"},
+              {"headerText": "Age", "field": "age", "id": "age"}]'
+     selection-mode.row="single">
+    </oj-table>
+  </div>
+</div>
+
