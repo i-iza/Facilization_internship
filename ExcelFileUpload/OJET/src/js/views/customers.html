@@ -1,0 +1,79 @@
+<div id="parentContainer" class="oj-sm-padding-2x">
+  <div>
+    <h5>Upload an Excel file</h5>
+    <oj-button style="margin-right:100px;" on-oj-action="[[selectFiles]]">
+      <span slot="startIcon" class="oj-ux-ico-plus"></span>
+      Add Files
+    </oj-button>
+    <oj-button id="button1" on-oj-action="[[confirmAction]]">
+      Confirm
+    </oj-button>
+  </div>
+  <div class="oj-sm-padding-1x-top">
+    Selected files:
+    <oj-bind-text value="[[fileNames]]"></oj-bind-text>
+  </div>
+  <div>
+    <h5>Preview an Excel file</h5>
+    <oj-input-text 
+      id="filename-input"
+      value="{{value}}" 
+      on-value-changed="{{handleInput}}"
+      label-hint="Enter file name"
+      class="oj-form-control-max-width-md"> 
+    </oj-input-text>
+  </div>
+  <div>
+    <oj-table
+      style="margin:5px"
+      id="table"
+      aria-label="Departments Table"
+      data="[[dataprovider]]"
+      columns="[[columns]]"
+      class="demo-table-container">
+    </oj-table>
+  </div>
+  <div>
+    <oj-dialog id="modalDialog1" dialog-title="Warning" aria-describedby="desc">
+      <div slot="body">
+        <p id="desc">
+          The file is already uploaded.
+        </p>
+      </div>
+      <div slot="footer">
+        <oj-button id="okButton" on-oj-action="[[closeDialog1]]">OK</oj-button>
+      </div>
+    </oj-dialog>
+    <oj-dialog id="modalDialog2" dialog-title="Success" aria-describedby="desc">
+      <div slot="body">
+        <p id="desc">
+          The file is uploaded successfully.
+        </p>
+      </div>
+      <div slot="footer">
+        <oj-button id="okButton" on-oj-action="[[closeDialog2]]">OK</oj-button>
+      </div>
+    </oj-dialog>
+    <oj-dialog id="modalDialog3" dialog-title="Not Found" aria-describedby="desc">
+      <div slot="body">
+        <p id="desc">
+          The file does not exist in the database.
+        </p>
+      </div>
+      <div slot="footer">
+        <oj-button id="okButton" on-oj-action="[[closeDialog3]]">OK</oj-button>
+      </div>
+    </oj-dialog>
+    <oj-dialog id="modalDialog4" dialog-title="Warning" aria-describedby="desc">
+      <div slot="body">
+        <p id="desc">
+          A file with the same name already exists in the database.
+        </p>
+      </div>
+      <div slot="footer">
+        <oj-button id="closeButton" on-oj-action="[[closeDialog4]]">Close</oj-button>
+        <oj-button id="replaceButton" on-oj-action="[[replaceDialog4]]">Replace</oj-button>
+      </div>
+    </oj-dialog>
+  </div>
+</div>
