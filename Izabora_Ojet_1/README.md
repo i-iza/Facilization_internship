@@ -34,6 +34,6 @@ Provides a visual representation of the gender distribution.
 **Session Storage**
 
 ## __Getting Started__  
-**1.** Clone the repository.  
-**2.** Configure your database settings in application.properties.  
-**3.** Build and execute the project using Maven on your preferred IDE.  
+**1.** Clone the Repository.  
+**2.** Open in Browser:  
+- Open the index.html file in a web browser to launch the Customer Form.
