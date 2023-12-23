@@ -1,7 +1,7 @@
 # Client & Account Management System  
 
 This project introduces a robust Client & Account Management System developed using Java Spring Boot.
-The system encompasses a REST service designed for effective client and account information management.
+The system encompasses a REST service designed for effective client and account information management. It uses H2, an in-memory database to store cutomer and account information on two tables.
 
 ## __Features__  
 - Data Access Object (DAO) Layer: Established a scalable and easily maintainable DAO layer for seamless CRUD operations on client and account entities.  
